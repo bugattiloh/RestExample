@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
         {
             var context = new PersonContext();
 
-            context.Add(new Person("Ivan", "Petrov", 12, DateTime.Now));
+            context.Add(new Person("Ivan", "Petrov", 12));
             context.SaveChanges();
         }
 

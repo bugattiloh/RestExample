@@ -14,12 +14,12 @@ namespace WebApplication1
 
         public DateTime Birthday { get; set; }
 
-        public Person(string firstName, string lastName, int age, DateTime birthday)
+        public Person(string firstName, string lastName, int age)
         {
             FirstName = firstName;
             LastName = lastName;
             Age = age;
-            Birthday = birthday;
+            Birthday = DateTime.Now;
         }
     }
 }

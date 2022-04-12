@@ -47,6 +47,26 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "GraphQL": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "GraphQL.Server.Transports.AspNetCore.SystemTextJson": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
+            "GraphQL.Server.Ui.Altair": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
+            "GraphQL.SystemTextJson": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[12.7.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0-rc.2.20475.6, )"

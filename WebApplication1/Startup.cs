@@ -1,12 +1,13 @@
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 using Microsoft.OpenApi.Models;
+using WebApplication1.GraphQL.Mutations;
+using WebApplication1.GraphQL.Queries;
 
 namespace WebApplication1
 {
@@ -15,6 +16,7 @@ namespace WebApplication1
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -22,6 +24,13 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<PersonContext>(db => db.UseSqlServer());
+            
+            services.AddGraphQLServer()
+                .RegisterService<PersonContext>()
+                .AddQueryType<PersonQuery>()
+                .AddMutationType<PersonMutation>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -43,7 +52,16 @@ namespace WebApplication1
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGraphQL();
+                endpoints.MapControllers();
+            });
+
+            app.UseGraphQLAltair();
+
+         
+
         }
     }
 }
