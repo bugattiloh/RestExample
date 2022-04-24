@@ -7360,11 +7360,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\1255968\\Desktop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\1255968\\Desktop\\prog\\C#\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\1255968\\Desktop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\1255968\\Desktop\\prog\\C#\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\1255968\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1255968\\Desktop\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\1255968\\Desktop\\prog\\C#\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

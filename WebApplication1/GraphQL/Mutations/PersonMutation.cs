@@ -9,12 +9,19 @@ namespace WebApplication1.GraphQL.Mutations
 {
     public class PersonMutation
     {
-        public Person CreatePerson([Service(ServiceKind.Synchronized)] PersonContext db, string firstName, string lastName, int age)
+        private readonly PersonContext _db;
+
+        public PersonMutation(PersonContext db)
+        {
+            _db = db;
+        }
+
+        public Person CreatePerson(string firstName,
+            string lastName, int age)
         {
             var person = new Person(firstName, lastName, age);
 
-            db.Persons.Add(person);
-            db.SaveChanges();
+            _db.Persons.Add(person);
             return person;
         }
     }
